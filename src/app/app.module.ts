@@ -1,23 +1,26 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {SharedModule} from "./modules/shared/shared.module";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HomeComponent} from "./modules/home/home.component";
-import { ProfileComponent } from './modules/profile/profile.component';
+import {ProfileComponent} from './modules/profile/profile.component';
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
+import {ProductComponent} from './modules/product/product.component';
+import { HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +33,10 @@ import {AppRoutingModule} from "./app-routing.module";
     ReactiveFormsModule,
     RouterOutlet,
     AppRoutingModule, // the AppModule catch this AppRoutingModule and says he if the path is home than open the HomeComponent
-
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
